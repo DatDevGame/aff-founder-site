@@ -34,15 +34,6 @@ export default function Blog() {
     window.location.href = AFF_LINK;
   };
 
-  const handleOpenInBrowser = () => {
-    const newWindow = window.open(window.location.href, "_blank");
-    if (!newWindow) {
-      alert("Vui lòng mở bằng trình duyệt ngoài để truy cập đúng nội dung.");
-    } else {
-      setShowInAppWarning(false);
-    }
-  };
-
   const handleSkipWarning = () => setShowInAppWarning(false);
 
   return (
@@ -82,26 +73,11 @@ export default function Blog() {
             </p>
             <div style={{ display: "flex", gap: "10px" }}>
               <button
-                onClick={handleOpenInBrowser}
-                style={{
-                  background: "#00bfff",
-                  border: "none",
-                  color: "#fff",
-                  padding: "10px 20px",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                  fontSize: "16px",
-                }}
-              >
-                Mở trình duyệt ngoài
-              </button>
-              <button
                 onClick={handleSkipWarning}
                 style={{
                   background: "#888",
                   border: "none",
                   color: "#fff",
-                  padding: "10px 20px",
                   borderRadius: "6px",
                   cursor: "pointer",
                   fontSize: "16px",
