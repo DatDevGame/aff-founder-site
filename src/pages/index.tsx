@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Head>
         <title>DatDevGame</title>
-        <meta name="description" content="Welcome to DatDevGame's portfolio" />
+        <meta name="description" content="Welcome to DatDevGame portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -21,7 +21,7 @@ export default function Home() {
             height={38}
             priority
           />
-          <h1>Welcome to DatDevGame's Portfolio</h1>
+          <h1>Welcome to DatDevGame Portfolio</h1>
           <p>Developer • Creator • Innovator</p>
         </main>
 
