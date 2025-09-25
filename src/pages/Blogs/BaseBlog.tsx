@@ -46,61 +46,18 @@ export default function Blog() {
       <main style={{ padding: "20px", textAlign: "center" }}>
         <h1>My Blog Post</h1>
 
-        {/* In-App Browser Warning */}
-        {showInAppWarning && (
-          <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              background: "rgba(0,0,0,0.85)",
-              color: "#fff",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 9999,
-              padding: "20px",
-              textAlign: "center",
-            }}
-          >
-            <p style={{ fontSize: "18px", marginBottom: "15px", lineHeight: 1.6 }}>
-              ⚠ Trang này có thể hoạt động không ổn định trên trình duyệt trong ứng dụng.
-              <br />
-              Khuyến nghị bạn mở bằng trình duyệt ngoài (Chrome, Safari, Firefox…)
-            </p>
-            <div style={{ display: "flex", gap: "10px" }}>
-              <button
-                onClick={handleSkipWarning}
-                style={{
-                  background: "#888",
-                  border: "none",
-                  color: "#fff",
-                  borderRadius: "6px",
-                  cursor: "pointer",
-                  fontSize: "16px",
-                }}
-              >
-                Bỏ qua
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* Sensitive Content Overlay */}
         <div style={{ position: "relative", maxWidth: "640px", margin: "0 auto", display: "block" }}>
           {!revealed && (
             <div
               style={{
-                position: "absolute",
+                position: "fixed",
                 top: 0,
                 left: 0,
                 width: "100%",
                 height: "100%",
                 backdropFilter: "blur(8px)",
-                background: "rgba(0,0,0,0.5)",
+                background: "rgba(0,0,0,0.8)",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
