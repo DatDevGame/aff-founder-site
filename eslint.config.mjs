@@ -10,15 +10,21 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...compat.extends(["next/core-web-vitals", "next/typescript"]), // dùng mảng
   {
-    ignores: [
+    ignores: [], // có thể vẫn giữ nhưng Flat Config mới dùng ignorePatterns
+    ignorePatterns: [
       "node_modules/**",
       ".next/**",
       "out/**",
       "build/**",
       "next-env.d.ts",
     ],
+    rules: {
+      // nếu muốn tắt react/no-unescaped-entities cho toàn project
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-img-element": "off", // tắt cảnh báo img element nếu muốn
+    },
   },
 ];
 
