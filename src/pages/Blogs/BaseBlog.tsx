@@ -2,139 +2,138 @@ import { useState } from "react";
 import Head from "next/head";
 
 export default function Blog() {
-    const [revealed, setRevealed] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
-    const handleReveal = () => {
-        setRevealed(true);
-        // mở link AFF trong tab mới
-        window.open("https://s.shopee.vn/50Px7oouoM", "_blank");
-    };
+  const handleReveal = () => {
+    setRevealed(true);
+    // mở link AFF trong tab mới
+    window.open("https://s.shopee.vn/50Px7oouoM", "_blank");
+  };
 
-    return (
-        <>
-            <Head>
-                <title>Blog Page</title>
-                <meta
-                    name="description"
-                    content="Blog with video, image, blur warning and affiliate redirect"
-                />
-            </Head>
+  return (
+    <>
+      <Head>
+        <title>Blog Page</title>
+        <meta
+          name="description"
+          content="Blog with responsive video, image, blur warning and affiliate redirect"
+        />
+      </Head>
 
-            <main style={{ padding: "20px", textAlign: "center" }}>
-                <h1>My Blog Post</h1>
+      <main style={{ padding: "20px", textAlign: "center" }}>
+        <h1>My Blog Post</h1>
 
-                {/* Overlay blur content */}
-                <div
-                    style={{
-                        position: "relative",
-                        display: "inline-block",
-                    }}
-                >
-                    {!revealed && (
-                        <div
-                            style={{
-                                position: "absolute",
-                                top: 0,
-                                left: 0,
-                                width: "100%",
-                                height: "100%",
-                                backdropFilter: "blur(8px)",
-                                background: "rgba(0,0,0,0.5)",
-                                color: "#fff",
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                zIndex: 10,
-                                padding: "20px",
-                            }}
-                        >
-                            <p
-                                style={{
-                                    fontSize: "18px",
-                                    marginBottom: "15px",
-                                    lineHeight: "1.6",
-                                    background: "#fff3cd",
-                                    color: "#856404",
-                                    padding: "12px 16px",
-                                    border: "1px solid #ffeeba",
-                                    borderRadius: "8px",
-                                    textAlign: "left",
-                                }}
-                            >
-                                ⚠ <strong>Cảnh Báo Nội Dung Nhạy Cảm</strong>
-                                <br />
-                                Nội dung hiển thị có thể bao gồm hình ảnh hoặc video nhạy cảm.
-                                <br />
-                                Bằng việc nhấn vào nút <em>"Xem nội dung"</em>, bạn xác nhận rằng:
-                            </p>
-                            <ul style={{ margin: "8px 0 15px 20px", padding: 0, textAlign: "left" }}>
-                                <li>Bạn đã đủ tuổi theo quy định pháp luật tại nơi cư trú.</li>
-                                <li>Bạn hoàn toàn tự chịu trách nhiệm cho quyết định của mình.</li>
-                            </ul>
-                            <p
-                                style={{
-                                    fontSize: "16px",
-                                    color: "#00ffff",   // aqua sáng
-                                    textAlign: "center",
-                                    paddingBottom: "10px", // thêm padding phía dưới
-                                }}
-                            >
-                                <strong>
-                                    Chúng tôi không chịu bất kỳ trách nhiệm nào liên quan đến việc bạn lựa chọn
-                                    truy cập nội dung này.
-                                </strong>
-                            </p>
-                            <button
-                                onClick={handleReveal}
-                                style={{
-                                    background: "#ff4d4f",
-                                    border: "none",
-                                    color: "#fff",
-                                    padding: "10px 20px",
-                                    borderRadius: "6px",
-                                    cursor: "pointer",
-                                    fontSize: "16px",
-                                }}
-                            >
-                                Xem nội dung
-                            </button>
-                        </div>
-                    )}
+        <div
+          style={{
+            position: "relative",
+            display: "block",
+            maxWidth: "640px",
+            margin: "0 auto",
+          }}
+        >
+          {/* Overlay blur + warning */}
+          {!revealed && (
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backdropFilter: "blur(8px)",
+                background: "rgba(0,0,0,0.5)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                padding: "20px",
+                zIndex: 10,
+                boxSizing: "border-box",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "1.6",
+                  background: "#fff3cd",
+                  color: "#856404",
+                  padding: "12px 16px",
+                  border: "1px solid #ffeeba",
+                  borderRadius: "8px",
+                  textAlign: "left",
+                  marginBottom: "15px",
+                }}
+              >
+                ⚠ <strong>Cảnh Báo Nội Dung Nhạy Cảm</strong>
+                <br />
+                Nội dung hiển thị có thể bao gồm hình ảnh hoặc video nhạy cảm.
+                <br />
+                Bằng việc nhấn vào nút <em>"Xem nội dung"</em>, bạn xác nhận rằng:
+              </p>
+              <ul
+                style={{
+                  margin: "8px 0 15px 20px",
+                  padding: 0,
+                  textAlign: "left",
+                }}
+              >
+                <li>Bạn đã đủ tuổi theo quy định pháp luật tại nơi cư trú.</li>
+                <li>Bạn hoàn toàn tự chịu trách nhiệm cho quyết định của mình.</li>
+              </ul>
+              <p
+                style={{
+                  fontSize: "16px",
+                  color: "#00ffff", // Aqua sáng
+                  textAlign: "center",
+                  paddingBottom: "10px",
+                }}
+              >
+                <strong>
+                  Chúng tôi không chịu bất kỳ trách nhiệm nào liên quan đến việc bạn lựa chọn
+                  truy cập nội dung này.
+                </strong>
+              </p>
+              <button
+                onClick={handleReveal}
+                style={{
+                  background: "#ff4d4f",
+                  border: "none",
+                  color: "#fff",
+                  padding: "10px 20px",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  fontSize: "16px",
+                }}
+              >
+                Xem nội dung
+              </button>
+            </div>
+          )}
 
-                    {/* Video */}
-                    <div
-                        style={{
-                            margin: "20px 0",
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <video width="640" height="360" controls>
-                            <source
-                                src="https://res.cloudinary.com/dajhoskov/video/upload/v1758814233/Review_m%C3%A1y_d%C3%B2_h%E1%BB%93ng_ngo%E1%BA%A1i_ph%C3%A1t_hi%E1%BB%87n_camera_gi%E1%BA%A5u_k%C3%ADn_shorts_-_nh%C3%A0_m%C3%ACnh_1080p_h264_vbo9fe.mp4"
-                                type="video/mp4"
-                            />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+          {/* Video */}
+          <div style={{ margin: "20px 0" }}>
+            <video
+              style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+              controls
+            >
+              <source
+                src="https://res.cloudinary.com/dajhoskov/video/upload/v1758814233/Review_m%C3%A1y_d%C3%B2_h%E1%BB%93ng_ngo%E1%BA%A1i_ph%C3%A1t_hi%E1%BB%87n_camera_gi%E1%BA%A5u_k%C3%ADn_shorts_-_nh%C3%A0_m%C3%ACnh_1080p_h264_vbo9fe.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
-                    {/* Image */}
-                    <div
-                        style={{
-                            marginTop: "20px",
-                            display: "flex",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <img
-                            src="https://res.cloudinary.com/dajhoskov/image/upload/v1758814480/photo_2025-09-23_12-56-05_dc9hzs.jpg"
-                            alt="Sample"
-                            width="400"
-                        />
-                    </div>
-                </div>
-            </main>
-        </>
-    );
+          {/* Image */}
+          <div style={{ marginTop: "20px" }}>
+            <img
+              style={{ width: "100%", maxWidth: "400px", height: "auto", borderRadius: "8px" }}
+              src="https://res.cloudinary.com/dajhoskov/image/upload/v1758814480/photo_2025-09-23_12-56-05_dc9hzs.jpg"
+              alt="Sample"
+            />
+          </div>
+        </div>
+      </main>
+    </>
+  );
 }
