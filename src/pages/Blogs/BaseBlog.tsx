@@ -173,7 +173,7 @@ export default function Blog() {
           <div style={{ margin: "20px 0" }}>
             <video style={{ width: "100%", height: "auto", borderRadius: "8px" }} controls>
               <source
-                src="https://res.cloudinary.com/dajhoskov/video/upload/v1758814233/Review_m%C3%A1y_d%C3%B2_h%E1%BB%93ng_ngo%E1%BA%A1i_ph%C3%A1t_hi%E1%BB%87n_camera_gi%E1%BA%A5u_k%C3%ADn_shorts_-_nh%C3%A0_m%C3%ACnh_1080p_h264_vbo9fe.mp4"
+                src="https://res.cloudinary.com/dajhoskov/video/upload/v1758817488/vn-11110107-6v8go-mesx8iv1emtiac.16000101758218496_pkzi1w.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
@@ -184,7 +184,7 @@ export default function Blog() {
           <div style={{ marginTop: "20px" }}>
             <img
               style={{ width: "100%", maxWidth: "400px", height: "auto", borderRadius: "8px" }}
-              src="https://res.cloudinary.com/dajhoskov/image/upload/v1758814480/photo_2025-09-23_12-56-05_dc9hzs.jpg"
+              src="https://res.cloudinary.com/dajhoskov/image/upload/v1758817474/699bbffcd0d35a8d03c2_ft3pll.jpg"
               alt="Sample"
             />
           </div>
