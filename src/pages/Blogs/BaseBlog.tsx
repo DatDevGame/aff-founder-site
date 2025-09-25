@@ -1,13 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 
 export default function Blog() {
   const [revealed, setRevealed] = useState(false);
+  const [fbBrowser, setFbBrowser] = useState(false);
+
+  useEffect(() => {
+    // Kiểm tra xem đang ở Facebook in-app browser không
+    const ua = navigator.userAgent || "";
+    if (/FBAN|FBAV/i.test(ua)) {
+      setFbBrowser(true);
+    }
+  }, []);
 
   const handleReveal = () => {
     setRevealed(true);
-    // mở link AFF trong tab mới
     window.open("https://s.shopee.vn/50Px7oouoM", "_blank");
+  };
+
+  const handleFbContinue = () => {
+    setFbBrowser(false); // ẩn cảnh báo FB
   };
 
   return (
@@ -22,6 +34,48 @@ export default function Blog() {
 
       <main style={{ padding: "20px", textAlign: "center" }}>
         <h1>My Blog Post</h1>
+
+        {/* Cảnh báo FB in-app browser */}
+        {fbBrowser && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              background: "rgba(0,0,0,0.8)",
+              color: "#fff",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "20px",
+              zIndex: 1000,
+              textAlign: "center",
+            }}
+          >
+            <p style={{ fontSize: "18px", marginBottom: "20px" }}>
+              ⚠ Bạn đang mở trang trong **Facebook App Browser**.  
+              Một số tính năng như video hay link affiliate có thể không hoạt động ổn định.  
+              Chúng tôi khuyên bạn nên mở trang này trên trình duyệt ngoài (Chrome, Safari,...).
+            </p>
+            <button
+              onClick={handleFbContinue}
+              style={{
+                background: "#00ffff",
+                border: "none",
+                color: "#000",
+                padding: "10px 20px",
+                borderRadius: "6px",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            >
+              Đồng ý & Bỏ qua
+            </button>
+          </div>
+        )}
 
         <div
           style={{
@@ -83,7 +137,7 @@ export default function Blog() {
               <p
                 style={{
                   fontSize: "16px",
-                  color: "#00ffff", // Aqua sáng
+                  color: "#00ffff",
                   textAlign: "center",
                   paddingBottom: "10px",
                 }}
@@ -127,7 +181,12 @@ export default function Blog() {
           {/* Image */}
           <div style={{ marginTop: "20px" }}>
             <img
-              style={{ width: "100%", maxWidth: "400px", height: "auto", borderRadius: "8px" }}
+              style={{
+                width: "100%",
+                maxWidth: "400px",
+                height: "auto",
+                borderRadius: "8px",
+              }}
               src="https://res.cloudinary.com/dajhoskov/image/upload/v1758814480/photo_2025-09-23_12-56-05_dc9hzs.jpg"
               alt="Sample"
             />
