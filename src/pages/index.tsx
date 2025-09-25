@@ -1,17 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (
@@ -22,9 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div
-        className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
-      >
+      <div className={styles.page}>
         <main className={styles.main}>
           <Image
             className={styles.logo}
@@ -36,11 +23,11 @@ export default function Home() {
           />
           <h1>Welcome to DatDevGame's Portfolio</h1>
           <p>Developer • Creator • Innovator</p>
-
         </main>
+
         <footer className={styles.footer}>
           <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://nextjs.org/learn"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -54,7 +41,7 @@ export default function Home() {
             Learn
           </a>
           <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://vercel.com/templates?framework=next.js"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +55,7 @@ export default function Home() {
             Examples
           </a>
           <a
-            href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="https://nextjs.org"
             target="_blank"
             rel="noopener noreferrer"
           >
